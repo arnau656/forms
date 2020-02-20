@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Contact form</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script>
+        function before() {
+            const form = document.getElementById("form");
+            const input = document.createElement("select");
+            input.className = "select";
+            input.id = "select";
+            input.type = "text";
+            form.insertBefore(input, document.getElementById("row1"));
+            const option = document.createElement("option");
+            option.text = "[Choose one of the options]";
+            option.selected = true;
+            option.disabled = true;
+            option.hidden = true;
+            input.appendChild(option);
+            for (let i = 1; i < 5; i++) {
+                const option = document.createElement("option");
+                option.value = "Option " + i;
+                option.text = "Option " + i;
+                input.appendChild(option);
+            }
+            document.getElementById("phone").style.display = "flex";
+            document.getElementById("booking").style.display = "none";
+
+        }
+
+        function after() {
+            let s = document.getElementById("select");
+            s.parentElement.removeChild(s);
+            document.getElementById("phone").style.display = "none";
+            document.getElementById("booking").style.display = "flex";
+
+        }
+    </script>
+</head>
+<body>
+<div class="container">
+    <div class="title">
+        <h2><i class="fa fa-envelope" aria-hidden="true"></i> Leave a message</h2>
+    </div>
+    <div class="form">
+        <fieldset>
+            <legend>Choose your form</legend>
+            <input onclick="before()" id="before" name="type" value="before" type="radio"><label
+                for="before">Before</label>
+            <input onclick="after()" id="after" name="type" value="after" type="radio" checked><label for="after">After</label>
+        </fieldset>
+        <form id="form">
+            <div id="row1">
+                <div class="name"><label for="name">Name</label><input class="input" id="name" name="name"></div>
+                <div class="name"><label for="surname">Surname</label><input class="input" id="surname" name="surname">
+                </div>
+            </div>
+            <div id="row2">
+                <div class="name"><label for="email">Email</label><input class="input" id="email" name="email"></div>
+                <div class="name" id="phone"><label for="tel">Telephone</label><input class="input" placeholder="699-999999" id="tel" name="tel"></div>
+                <div class="name" id="booking"><label for="book">Booking Number</label><input class="input" id="book" name="book"></div>
+            </div>
+            <label for="txtArea"></label><textarea id="txtArea">
+Write yor message...
+        </textarea>
+            <button>Send form</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>

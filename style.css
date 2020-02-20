@@ -1,0 +1,96 @@
+*:focus {
+    outline: none;
+}
+
+.container {
+    border: 1px solid #d7d7d7;
+    width: 30%;
+    margin: 200px auto;
+    padding: 0;
+}
+
+input {
+    border: 0;
+}
+
+
+fieldset{
+    border: 1px solid #d7d7d7;
+}
+
+fieldset label{
+    color: grey;
+}
+
+textarea{
+    color: grey;
+}
+
+.name {
+    box-sizing: border-box;
+    border: 1px solid #d7d7d7;
+    margin: 10px 2px;
+    width: 50%;
+    padding: 5px;
+    display: flex;
+    flex-direction: row;
+}
+
+h2{
+    margin: 0 0 5px;
+    padding: 0;
+    color: #7cb021;
+}
+
+form div label{
+    color: grey;
+}
+
+#row1,#row2 {
+    display: flex;
+    flex-direction: row;
+}
+
+#txtArea {
+    width: 100%;
+}
+
+button{
+    background-color: dodgerblue;
+    color: white;
+}
+
+.select {
+    width: 100%;
+    margin: 10px 0 0 0;
+}
+
+@media screen and (max-width:800px) {
+    #row1,#row2 {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .name{
+        width: 100%;
+    }
+}
+
+.input {
+    width: 100%;
+    padding: 0;
+    margin: 0 0 0 5px;
+}
+
+.title {
+    border-bottom: 1px dashed #d7d7d7;
+    padding: 5px;
+}
+
+.form {
+    margin: 10px;
+}
+
+#phone {
+    display: none;
+}
